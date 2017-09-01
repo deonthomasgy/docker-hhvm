@@ -13,6 +13,8 @@ RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e728
 	&& /usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60 \
     && rm -rf /var/lib/apt/lists/*
 
+RUN echo "hhvm.php7.all = 1" >> /etc/hhvm/php.ini
+
 EXPOSE 9000
 
 COPY entrypoint.sh /
