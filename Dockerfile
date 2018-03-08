@@ -2,9 +2,9 @@ FROM debian:jessie
 
 MAINTAINER Deon Thomas "deon.thomas.gy@gmail.com"
 
-ENV HHVM_VERSION 3.21.3~jessie
+ENV HHVM_VERSION 3.21.7-1~jessie
 
-RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449 \
+RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xB4112585D386EB94 \
 	&& echo 'deb http://dl.hhvm.com/debian jessie-lts-3.21 main' > /etc/apt/sources.list.d/hhvm.list \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends \
