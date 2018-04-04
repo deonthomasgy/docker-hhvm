@@ -7,7 +7,7 @@ ENV HHVM_VERSION 3.21.10-1~jessie
 RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xB4112585D386EB94 \
 	&& echo 'deb http://dl.hhvm.com/debian jessie-lts-3.21 main' > /etc/apt/sources.list.d/hhvm.list \
 	&& apt-get update \
-	&& apt-get install -y --no-install-recommends \
+	&& apt-get install -y --install-recommends \
         ca-certificates \
         hhvm=$HHVM_VERSION \
         unoconv \
