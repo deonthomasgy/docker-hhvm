@@ -4,10 +4,10 @@ MAINTAINER Deon Thomas "deon.thomas.gy@gmail.com"
 
 ENV HHVM_VERSION 3.21.11-1~jessie
 
-RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xB4112585D386EB94 \
+RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 \
         && echo 'deb http://dl.hhvm.com/debian jessie-lts-3.21 main' > /etc/apt/sources.list.d/hhvm.list \
         && apt-get update \
-        && apt-get install -y --no-install-recommends \
+        && apt-get install -y --no-install-recommends --force-yes \
         ca-certificates \
         hhvm=$HHVM_VERSION \
         && /usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60 \
